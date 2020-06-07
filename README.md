@@ -23,7 +23,7 @@ transliterate("≠ ∉"; custom_replacements=Dict("≠" => "not equal", "∉" =>
 
 ## Todo
 
-- Add all rules for every language, instead of the general approach
+- Add all rules for every language, instead of the current approach
   - This will allow proper `languages="language"` syntax
 - Support more languages
 
