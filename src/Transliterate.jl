@@ -22,22 +22,18 @@ julia> transliterate("≠ ∉"; custom_replacements=Dict("≠" => "not equal", "
 ```
 """
 function transliterate(str; languages=[], custom_replacements=Dict())
-    if languages ≠ []
-        if typeof(languages) == String
-            languages = [languages]
-        end
+    if typeof(languages) <: AbstractString
+        languages = [languages]
+    end
+    if languages == []
+        languages = collect(keys(replacements))
+    end
+    if "la" ∉ languages
+        pushfirst!(languages, "la")
+    end
 
-        if "la" ∉ languages
-            pushfirst!(languages, "la")
-        end
-
-        for language in languages
-            merge!(custom_replacements, replacements[language])
-        end
-    else
-        for replacement in replacements
-            merge!(custom_replacements, replacement.second)
-        end
+    for language in languages
+        merge!(custom_replacements, replacements[language])
     end
 
     for pair in custom_replacements
