@@ -18,14 +18,16 @@ using Transliterate
 
 transliterate("Déjà Vu!") == "Deja Vu!"
 transliterate("Привет") == "Privet"
-transliterate("ث س و"; languages="ar") == "th s w"
-transliterate("≠ ∉"; custom_replacements=Dict("≠" => "not equal", "∉" => "not in")) == "not equal not in"
+transliterate("ث س و"; language="ar") == "th s w"
+
+custom_replacements = Dict("≠" => "not equal", "∉" => "not in")
+transliterate("≠ ∉"; custom_replacements=custom_replacements) == "not equal not in"
 ```
 
 ## Todo
 
 - Add all rules for every language, instead of the current approach
-  - This will allow proper `languages="language"` syntax
+  - This will allow proper `language="language"` syntax
 - Support more languages
 
 Contributions are welcome.
