@@ -4,6 +4,10 @@ export transliterate, replacements
 
 include("replacements.jl")
 
+wrap_languages(languages::AbstractString) = [languages]
+wrap_languages(languages::Nothing) = first.(replacements)
+wrap_languages(languages) = isempty(languages) ? wrap_languages(nothing) : languages
+
 """
     transliterate(str; languages=[], custom_replacements=Dict())
 
@@ -21,24 +25,22 @@ julia> transliterate("≠ ∉"; custom_replacements=Dict("≠" => "not equal", "
 "not equal not in"
 ```
 """
-function transliterate(str; languages=[], custom_replacements=Dict())
-    if typeof(languages) <: AbstractString
-        languages = [languages]
-    end
-    if languages == []
-        languages = collect(keys(replacements))
-    end
+transliterate(str; languages = nothing, custom_replacements = Dict()) = transliterate(str, wrap_languages(languages); custom_replacements = custom_replacements)
+
+function transliterate(str, languages; custom_replacements = Dict())
+    str = foldl(replace, custom_replacements, init = str)
+
     if "la" ∉ languages
-        pushfirst!(languages, "la")
+        str = foldl(replace, replacements[1].second, init = str)
     end
 
     for language in languages
-        merge!(custom_replacements, replacements[language])
+        # TODO: Add warning if a specified language is missing
+        lang_id = findfirst(x -> x.first == language, replacements)
+        d = replacements[lang_id].second
+        str = foldl(replace, d, init = str)
     end
 
-    for pair in custom_replacements
-        str = replace(str, pair.first => pair.second)
-    end
     return str
 end
 

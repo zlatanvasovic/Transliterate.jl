@@ -1,6 +1,6 @@
 # Source: https://github.com/sindresorhus/transliterate/blob/master/replacements.js
 
-const replacements = Dict(
+const replacements = [
     # General (named Latin in the source)
     "la" => Dict(
         "À" => "A",
@@ -377,8 +377,8 @@ const replacements = Dict(
         "ч" => "ch",
         "Ш" => "Sh",
         "ш" => "sh",
-        "Щ" => "Shh",
-        "щ" => "shh",
+        "Щ" => "Shch",
+        "щ" => "shch",
         "Ъ" => "",
         "ъ" => "",
         "Ы" => "Y",
@@ -808,4 +808,4 @@ const replacements = Dict(
         "ø" => "oe",
         "å" => "aa"
     )
-)
+]
