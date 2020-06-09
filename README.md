@@ -1,6 +1,7 @@
 # Transliterate
 
 [![Build Status](https://travis-ci.com/zdroid/Transliterate.jl.svg?branch=master)](https://travis-ci.com/zdroid/Transliterate.jl)
+[![Coverage](https://codecov.io/gh/zdroid/Transliterate.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/zdroid/Transliterate.jl)
 
 Converts non-ASCII characters into ASCII using [transliteration](https://en.wikipedia.org/wiki/Transliteration).
 
