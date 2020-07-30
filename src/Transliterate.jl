@@ -4,9 +4,9 @@ export transliterate, replacements
 
 include("replacements.jl")
 
-wrap_language(language::AbstractString) = [language]
-wrap_language(language::Nothing) = first.(replacements)
-wrap_language(language::AbstractVector) = language
+_language(language::AbstractString) = [language]
+_language(language::Nothing) = first.(replacements)
+_language(language::AbstractVector) = language
 
 """
     transliterate(str; language=nothing, custom_replacements=Dict())
@@ -14,6 +14,7 @@ wrap_language(language::AbstractVector) = language
 Converts non-ASCII characters into ASCII using [transliteration](https://en.wikipedia.org/wiki/Transliteration).
 
 # Examples
+
 ```julia-repl
 julia> transliterate("Déjà Vu!")
 "Deja Vu!"
@@ -26,7 +27,7 @@ julia> transliterate("≠ ∉"; custom_replacements=Dict("≠" => "not equal", "
 ```
 """
 transliterate(str; language=nothing, custom_replacements=Dict()) =
-    transliterate(str, wrap_language(language), custom_replacements)
+    transliterate(str, _language(language), custom_replacements)
 
 function transliterate(str, language, custom_replacements)
     str = foldl(replace, custom_replacements, init = str)

@@ -14,14 +14,20 @@ Converts non-ASCII characters into ASCII using [transliteration](https://en.wiki
 ## Examples
 
 ```julia
-using Transliterate
+julia> using Transliterate
 
-transliterate("Déjà Vu!") == "Deja Vu!"
-transliterate("Привет") == "Privet"
-transliterate("ث س و"; language="ar") == "th s w"
+julia> transliterate("Déjà Vu!")
+"Deja Vu!"
 
-custom_replacements = Dict("≠" => "not equal", "∉" => "not in")
-transliterate("≠ ∉"; custom_replacements=custom_replacements) == "not equal not in"
+julia> transliterate("Привет")
+"Privet"
+
+julia> transliterate("ث س و"; language="ar")
+"th s w"
+
+julia> custom_replacements = Dict("≠" => "not equal", "∉" => "not in")
+julia> transliterate("≠ ∉"; custom_replacements=custom_replacements)
+"not equal not in"
 ```
 
 ## Todo
