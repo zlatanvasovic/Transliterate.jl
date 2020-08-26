@@ -1,7 +1,7 @@
 name = "Transliterate"
 uuid = "6413a62a-abe4-4af6-86c3-5403bf7fb405"
 authors = ["Zlatan Vasović <zlatanvasovic@gmail.com> and contributors"]
-version = "0.2.0"
+version = "0.3.0"
 
 [compat]
 julia = "1"

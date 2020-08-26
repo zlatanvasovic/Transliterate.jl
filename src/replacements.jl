@@ -1,8 +1,10 @@
-# Source: https://github.com/sindresorhus/transliterate/blob/master/replacements.js
-
-const replacements = [
+"""
+Replacements pairs for all languages.
+Source: <https://github.com/sindresorhus/transliterate/blob/master/replacements.js>
+"""
+const replacements = (
     # General (named Latin in the source)
-    "la" => Dict(
+    "la" => (
         "À" => "A",
         "Á" => "A",
         "Â" => "A",
@@ -73,7 +75,7 @@ const replacements = [
     ),
 
     # German
-    "de" => Dict(
+    "de" => (
         "ß" => "ss",
         "ä" => "ae",
         "Ä" => "Ae",
@@ -84,7 +86,7 @@ const replacements = [
     ),
 
     # Vietnamese
-    "vi" => Dict(
+    "vi" => (
         "à" => "a",
         "À" => "A",
         "á" => "a",
@@ -222,7 +224,7 @@ const replacements = [
     ),
 
     # Arabic
-    "ar" => Dict(
+    "ar" => (
         "ء" => "e",
         "آ" => "a",
         "أ" => "a",
@@ -276,7 +278,7 @@ const replacements = [
     ),
 
     # Persian / Farsi
-    "fa" => Dict(
+    "fa" => (
         "چ" => "ch",
         "ک" => "k",
         "گ" => "g",
@@ -296,7 +298,7 @@ const replacements = [
     ),
 
     # Pashto
-    "ps" => Dict(
+    "ps" => (
         "ټ" => "p",
         "ځ" => "z",
         "څ" => "c",
@@ -315,7 +317,7 @@ const replacements = [
     ),
 
     # Urdu
-    "ur" => Dict(
+    "ur" => (
         "ٹ" => "t",
         "ڈ" => "d",
         "ڑ" => "r",
@@ -326,7 +328,7 @@ const replacements = [
     ),
 
     # Russian
-    "ru" => Dict(
+    "ru" => (
         "А" => "A",
         "а" => "a",
         "Б" => "B",
@@ -396,7 +398,7 @@ const replacements = [
     ),
 
     # Romanian
-    "ro" => Dict(
+    "ro" => (
         "ă" => "a",
         "Ă" => "A",
         "ș" => "s",
@@ -408,7 +410,7 @@ const replacements = [
     ),
 
     # Turkish
-    "tr" => Dict(
+    "tr" => (
         "ş" => "s",
         "Ş" => "S",
         "ç" => "c",
@@ -420,7 +422,7 @@ const replacements = [
     ),
 
     # Armenian
-    "hy" => Dict(
+    "hy" => (
         "ա" => "a",
         "բ" => "b",
         "գ" => "g",
@@ -464,7 +466,7 @@ const replacements = [
     ),
 
     # Georgian
-    "ka" => Dict(
+    "ka" => (
         "ა" => "a",
         "ბ" => "b",
         "გ" => "g",
@@ -501,7 +503,7 @@ const replacements = [
     ),
 
     # Czech
-    "cz" => Dict(
+    "cz" => (
         "č" => "c",
         "ď" => "d",
         "ě" => "e",
@@ -523,7 +525,7 @@ const replacements = [
     ),
 
     # Dhivehi
-    "dv" => Dict(
+    "dv" => (
         "ހ" => "h",
         "ށ" => "sh",
         "ނ" => "n",
@@ -576,7 +578,7 @@ const replacements = [
     ),
 
     # Greek
-    "el" => Dict(
+    "el" => (
         "α" => "a",
         "β" => "v",
         "γ" => "g",
@@ -649,7 +651,7 @@ const replacements = [
     ),
 
     # Latvian
-    "lv" => Dict(
+    "lv" => (
         "ā" => "a",
         "ē" => "e",
         "ģ" => "g",
@@ -675,7 +677,7 @@ const replacements = [
     ),
 
     # Lithuanian
-    "lt" => Dict(
+    "lt" => (
         "ą" => "a",
         "č" => "c",
         "ę" => "e",
@@ -696,7 +698,7 @@ const replacements = [
     ),
 
     # Macedonian
-    "mk" => Dict(
+    "mk" => (
         "Ќ" => "Kj",
         "ќ" => "kj",
         "Љ" => "Lj",
@@ -708,7 +710,7 @@ const replacements = [
     ),
 
     # Ukrainian
-    "uk" => Dict(
+    "uk" => (
         "Є" => "Ye",
         "І" => "I",
         "Ї" => "Yi",
@@ -720,7 +722,7 @@ const replacements = [
     ),
 
     # Polish
-    "pl" => Dict(
+    "pl" => (
         "ą" => "a",
         "ć" => "c",
         "ę" => "e",
@@ -741,7 +743,7 @@ const replacements = [
 
     # Hungarian
     # Conflicts with German and Latin.
-    "hu" => Dict(
+    "hu" => (
         "ä" => "a",
         "Ä" => "A",
         "ö" => "o",
@@ -754,7 +756,7 @@ const replacements = [
 
     # Serbian
     # Conflicts with Vietnamese.
-    "sr" => Dict(
+    "sr" => (
         "ђ" => "dj",
         "Ђ" => "Dj",
         "љ" => "lj",
@@ -775,7 +777,7 @@ const replacements = [
 
     # Slovak
     # Conflicts with German and Latin.
-    "sk" => Dict(
+    "sk" => (
         "ä" => "a",
         "Ä" => "A",
         "ľ" => "l",
@@ -788,7 +790,7 @@ const replacements = [
 
     # Swedish
     # Conflicts with German and Latin.
-    "sw" => Dict(
+    "sw" => (
         "å" => "o",
         "Å" => "o",
         "ä" => "a",
@@ -800,7 +802,7 @@ const replacements = [
     ),
 
     # Danish
-    "da" => Dict(
+    "da" => (
         "Æ" => "Ae",
         "Ø" => "Oe",
         "Å" => "Aa",
@@ -808,4 +810,4 @@ const replacements = [
         "ø" => "oe",
         "å" => "aa"
     )
-]
+)

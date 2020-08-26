@@ -22,18 +22,17 @@ julia> transliterate("Déjà Vu!")
 julia> transliterate("Привет")
 "Privet"
 
-julia> transliterate("ث س و"; language="ar")
+julia> transliterate("ث س و"; languages=["ar"])
 "th s w"
 
-julia> custom_replacements = Dict("≠" => "not equal", "∉" => "not in")
-julia> transliterate("≠ ∉"; custom_replacements=custom_replacements)
+julia> transliterate("≠ ∉"; custom_replacements=("≠" => "not equal", "∉" => "not in"))
 "not equal not in"
 ```
 
 ## Todo
 
 - Add all rules for every language, instead of the current approach
-  - This will allow proper `language="language"` syntax
+  - This would allow proper `languages` syntax
 - Support more languages
 
 Contributions are welcome.
